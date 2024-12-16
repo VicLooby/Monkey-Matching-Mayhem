@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monkey Matching Mayhem</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="/favicomatic(3)/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicomatic(3)/favicon-16x16.png" sizes="16x16">
+
+    <!-- THIRD PARTY -->
+    <!-- normalise -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles/generics.css">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- our stylesheet -->
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- our script -->
+    <script type="module" src="index.js" async></script>
+</head>
+
+<body>
+        <h1 class="page-title">Monkey Matching MAYHEM</h1>
+        <!-- audio - need to hide the video -->
+        <div class="overlay-text visible">Click to Start</div>
+        <div id="game-over-text" class="overlay-text">Game Over
+            <span class="overlay-text-small">Click to Restart</span>
+        </div>
+        <div id="you-win-text" class="overlay-text">You Win!
+            <span class="overlay-text-small">Click to Restart</span>
+        </div>
+        <div class="game-wrapper">
+            <div class="game-container">
+                <div class="game-info-container">
+                    <div class="game-info">
+                        Time <span id="time-remaining">100</span>
+                    </div>
+                    <div class="game-info">
+                        Flips <span id="flips">0</span>
+                    </div>
+                </div>
+            <!-- juggling -->
+                <div class="card">
+                <div class="card-back card-face">
+                    <img src="images/monkey_card_back.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="images/monkey_juggling.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="images/monkey_card_back.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="images/monkey_juggling.png">
+                </div>
+            </div>
+            <!-- kicking -->
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="images/monkey_card_back.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="images/monkey_kicking.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="images/monkey_card_back.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="images/monkey_kicking.png">
+                </div>
+            </div>
+            <!-- laughing -->
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="images/monkey_card_back.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="images/monkey_laughing.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="images/monkey_card_back.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="images/monkey_laughing.png">
+                </div>
+            </div>
+            <!-- skateboarding -->
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="images/monkey_card_back.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="images/monkey_skateboarding.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="images/monkey_card_back.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="images/monkey_skateboarding.png">
+                </div>
+            </div>
+            <!-- sleeping -->
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="images/monkey_card_back.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="images/monkey_sleeping.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="images/monkey_card_back.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="images/monkey_sleeping.png">
+                </div>
+            </div>
+            <!-- standing -->
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="images/monkey_card_back.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="images/monkey_standing.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="images/monkey_card_back.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="images/monkey_standing.png">
+                </div>
+            </div>
+            <!-- teasing -->
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="images/monkey_card_back.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="images/monkey_teasing.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="images/monkey_card_back.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="images/monkey_teasing.png">
+                </div>
+            </div>
+            <!-- walking -->
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="images/monkey_card_back.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="images/monkey_walking.png">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-back card-face">
+                    <img src="images/monkey_card_back.png">
+                </div>
+                <div class="card-front card-face">
+                    <img class="card-value" src="images/monkey_walking.png">
+                </div>
+            </div>
+        </div>
+            <div class="girl-explorer">
+                <img src="images/little_girl_with_camera_.png">
+                </div>
+        </div>
+
+</body>
+
+</html>
